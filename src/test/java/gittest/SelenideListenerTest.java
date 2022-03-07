@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class SelenideListenerTest {
 
@@ -15,7 +16,7 @@ public class SelenideListenerTest {
     @Test
     public void issueTabTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
-
+        open("https://github.com");
         $(".header-search-input").click();
         $(".header-search-input").sendKeys(REPOSITORY);
         $(".header-search-input").submit();

@@ -1,8 +1,6 @@
 package gittest;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.logevents.SelenideLogger;
-import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
@@ -16,8 +14,6 @@ public class LambdaTest {
 
     @Test
     public void issueTabTest() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
-
         step("Открываем главную страницу", () -> open("https://github.com"));
         step("Ищем репоизторий " + REPOSITORY, () -> {
             $(".header-search-input").click();
