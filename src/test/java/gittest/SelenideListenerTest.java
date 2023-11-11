@@ -17,9 +17,9 @@ public class SelenideListenerTest {
     public void issueTabTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         open("https://github.com");
-        $(".header-search-input").click();
-        $(".header-search-input").sendKeys(REPOSITORY);
-        $(".header-search-input").submit();
+        $(".header-search-button").click();
+        $("#query-builder-test").sendKeys(REPOSITORY);
+        $("#query-builder-test").submit();
         $(By.linkText(REPOSITORY)).click();
         $("#issues-tab").shouldHave(Condition.text("Issues"));
     }

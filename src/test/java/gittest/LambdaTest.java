@@ -16,9 +16,9 @@ public class LambdaTest {
     public void issueTabTest() {
         step("Открываем главную страницу", () -> open("https://github.com"));
         step("Ищем репоизторий " + REPOSITORY, () -> {
-            $(".header-search-input").click();
-            $(".header-search-input").sendKeys(REPOSITORY);
-            $(".header-search-input").submit();
+            $(".header-search-button").click();
+            $("#query-builder-test").sendKeys(REPOSITORY);
+            $("#query-builder-test").submit();
         });
         step("Открываем репозиторий " + REPOSITORY, () -> $(By.linkText(REPOSITORY)).click());
         step("Проверяем что существует вкладка Issues", () -> {
