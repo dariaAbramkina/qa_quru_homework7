@@ -18,7 +18,7 @@ public class WebSteps {
 
     @Step("Ищем репоизторий {repo}")
     public void searchForRepository(String repo) {
-        $("#query-builder-test").click();
+        $(".header-search-button").click();
         $("#query-builder-test").sendKeys(repo);
         $("#query-builder-test").submit();
     }
